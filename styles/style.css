@@ -1,0 +1,49 @@
+ /*
+ Author:Parag Mahajan
+ Title: style.css
+ */
+ 
+ 
+ header{
+	 text-align:center;
+	 color:#1612ED;
+	 margin-top:32px;
+	 font-size:150%
+ }
+ 
+ .select-class{
+	 margin-top:32px;
+	 margin-bottom:32px;
+ }
+ 
+ #answers{
+	 margin-top:5px;
+	 margin-bottom:32px;
+ }
+ 
+ #select-question{
+	 margin-left:12px;
+	 width:10%;
+ }
+ 
+ .hidden{
+	 display:none;
+ }
+ 
+ #answer{
+	display:inline;
+}
+ .error-message{
+	 color:red;
+	 margin:3px;
+	 font-size:80%;
+	 display:inline;
+ }
+ 
+ #calculate-button{
+	 margin-top:12px;
+	 margin-bottom:5px;
+ }
+ 
+ 
+ 

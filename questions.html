@@ -1,0 +1,61 @@
+<!-- This is main page-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="description" content="Quiz"/> 
+	<meta name="keywords" content="Quiz Questions"/> 
+	<meta name="author" content="Parag Mahajan"/>
+	<title>Quiz Questions </title>
+	<!-- below code of lines includes all important files  -->
+	<link href= "styles/style.css" rel="stylesheet" type="text/css" />
+	<script src="js/handlebars-v4.0.5.js"></script> 
+	<script src="js/jquery-2.1.0.js"></script>
+	<script src="js/questions.js"></script> 
+</head>
+<body>
+	<header> 
+		<h1>Quiz Questions</h1>
+	</header>
+	<section class="select-class">
+		<label for="select-question"> Select Question:</label>
+		<!-- Handlebar template to load select options  -->
+			<script id="questions-no-template" type="text/x-handlebars-template"> 
+				<select id="select-question" name="question-no">
+					{{#questions}}
+						<option value="{{questionNo}}"> Q {{questionNo}}</option>
+					{{/questions}}	
+				</select>
+			</script>
+	</section>
+	<fieldset>
+		<section id="questions">
+			<!-- Handlebar template to load questions  -->
+			<script id="questions-template" type="text/x-handlebars-template"> 
+				{{#questions}}
+				{{#if show }}
+					<section id="q{{questionNo}}">
+							<label for="text{{questionNo}}"> <strong> Question {{questionNo}}. </strong>{{questionDesc}} </label>
+							<input type="text" id="text{{questionNo}}" name="number" pattern="[0-9]{1,}" placeholder="Enter number here" />
+							<article class="error-message"></article>
+					</section>
+				  {{else}}
+					<section id="q{{questionNo}}" class="hidden">
+							<label for="text{{questionNo}}"> <strong> Question {{questionNo}}. </strong>{{questionDesc}} </label>
+							<input type="text" id="text{{questionNo}}" name="number" pattern="[0-9]{1,}" placeholder="Enter number here" />
+							<article class="error-message"></article>
+					</section>
+				  {{/if}}
+				{{/questions}}		
+			</script>
+		</section>
+		<section>
+			<input type="button" id="calculate-button" value="Calculate"/>
+		</section>
+		<section>
+			<strong>Answer:</strong><article id="answer"></article>
+		</section>
+	</fieldset>
+</body>
+</html>
